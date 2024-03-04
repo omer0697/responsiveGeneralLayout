@@ -142,7 +142,7 @@ export const SliderPicture = ({data}) => {
     };
 
     return (
-        <section className="relative h-96 w-full">
+        <section className="relative h-96  w-full lg:h-screen">
             {data.map((slide, index) => {
                 return (
                     <div
@@ -150,12 +150,11 @@ export const SliderPicture = ({data}) => {
                         key={index}
                     >
                         {index === current && (
-                            <Image
+                            <img
                                 src={slide.image}
                                 alt="Picture of the author"
-                                width={1920}
-                                // height will be 100% of the parent element
-                                height={1080}
+                                width={200}
+                                height={200}
                                 className='object-cover w-full h-full absolute top-0 left-0'
                             />
                         )}
@@ -165,13 +164,13 @@ export const SliderPicture = ({data}) => {
             <KeyboardArrowLeftIcon
                 onClick={prevSlide}
                 className='absolute top-1/2 left-0 transform -translate-y-1/2 text-white cursor-pointer'
-                sx={{ fontSize: 50 }}
+                sx={{ fontSize: 120 }}
             />
 
             <KeyboardArrowRightIcon
                 onClick={nextSlide}
                 className='absolute top-1/2 right-0 transform -translate-y-1/2 text-white cursor-pointer'
-                sx={{ fontSize: 50 }}
+                sx={{ fontSize: 120 }}
             />
         </section>
     );
