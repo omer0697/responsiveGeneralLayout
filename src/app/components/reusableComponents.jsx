@@ -18,6 +18,9 @@ import MenuItem from '@mui/material/MenuItem';
 import Fade from '@mui/material/Fade';
 import LoadingButton from '@mui/lab/LoadingButton';
 import Image from 'next/image'
+import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
+import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
+
 
 
 const CustomTable = ({ columns, data }) => {
@@ -148,40 +151,52 @@ export const TeklifAl = ({props, variant, isSuitForMobile}) => {
 export const SliderPicture = ({data}) => {
     const [current, setCurrent] = React.useState(0);
 
-    
     useEffect(() => {
         const interval = setInterval(() => {
             setCurrent(current === data.length - 1 ? 0 : current + 1);
         }, 3000);
         return () => clearInterval(interval);
     }, [current]);
-    
-    if (!Array.isArray(data) || data.length <= 0) {
-        return null;
-    }
+
+    const nextSlide = () => {
+        setCurrent(current === data.length - 1 ? 0 : current + 1);
+    };
+
+    const prevSlide = () => {
+        setCurrent(current === 0 ? data.length - 1 : current - 1);
+    };
 
     return (
-        <section className='relative'>
+        <section className="relative h-96 w-full">
             {data.map((slide, index) => {
                 return (
                     <div
-                        className={index === current ? 'flex' : 'hidden'}
+                        className={index === current ? 'opacity-100' : 'opacity-0'}
                         key={index}
                     >
                         {index === current && (
                             <Image
                                 src={slide.image}
-                                alt={slide.title}
+                                alt="Picture of the author"
                                 width={1920}
                                 height={1080}
-                                className='object-cover w-full h-full'
+                                className='object-cover w-full h-full absolute top-0 left-0'
                             />
                         )}
                     </div>
-                )
-            }
-            )}
+                );
+            })}
+            <KeyboardArrowLeftIcon
+                onClick={prevSlide}
+                className='absolute top-1/2 left-0 transform -translate-y-1/2 text-white cursor-pointer'
+                sx={{ fontSize: 50 }}
+            />
+
+            <KeyboardArrowRightIcon
+                onClick={nextSlide}
+                className='absolute top-1/2 right-0 transform -translate-y-1/2 text-white cursor-pointer'
+                sx={{ fontSize: 50 }}
+            />
         </section>
-    )
+    );
 }
-        
