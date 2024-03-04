@@ -1,35 +1,13 @@
+"use client";
+
 import React from 'react'
 import Image from 'next/image'
-import CustomTable, { CustomDrawerMobilNav, TeklifAl } from './reusableComponents'
+import { CustomDrawerMobilNav, TeklifAl } from './reusableComponents'
 import DrawerMobileNavigation from './DrawerMobile'
 import Link from 'next/link'
+import CustomTable from './CustomTable'
+import Loading from './Loading'
 
-const GENERATOR_FEATURES_AND_PRICING = {
-  columns: ["Model Numarası", "Güç", "Motor Tipi", "Fiyat"],
-  data: [
-    {
-      id: 1,
-      "Model Numarası": "G1",
-      Güç: "1000W",
-      "Motor Tipi": "Elektrikli",
-      Fiyat: "1000TL",
-    },
-    {
-      id: 2,
-      "Model Numarası": "G2",
-      Güç: "2000W",
-      "Motor Tipi": "Elektrikli",
-      Fiyat: "2000TL",
-    },
-    {
-      id: 3,
-      "Model Numarası": "G3",
-      Güç: "3000W",
-      "Motor Tipi": "Elektrikli",
-      Fiyat: "3000TL",
-    },
-  ],
-}
 
 const StyledLink = ({ children, href }) => {
   return (
@@ -39,7 +17,27 @@ const StyledLink = ({ children, href }) => {
   )
 }
 
+// before heresection loads we show loading
+
+
+
 const HeroSection = () => {
+
+  // loading bar is shown before the page loads and after the page loads it is hidden
+  const [loading, setLoading] = React.useState(true)
+
+  React.useEffect(() => {
+    setTimeout(() => {
+      setLoading(false)
+    }, 3000)
+  }
+  , [])
+
+  if (loading) {
+    return <Loading />
+  }
+
+
   return (
     <div className='h-screen w-full'>
       <div>

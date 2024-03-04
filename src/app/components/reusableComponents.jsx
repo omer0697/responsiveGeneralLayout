@@ -23,31 +23,6 @@ import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 
 
 
-const CustomTable = ({ columns, data }) => {
-    return (
-        <Table>
-            <thead>
-                <tr>
-                    {columns.map((column) => (
-                        <th key={column}>{column}</th>
-                    ))}
-                </tr>
-            </thead>
-            <tbody>
-                {data.map((row) => (
-                    <tr key={row.id}>
-                        {columns.map((column) => (
-                            <td key={column}>{row[column]}</td>
-                        ))}
-                    </tr>
-                ))}
-            </tbody>
-        </Table>
-    )
-}
-
-export default CustomTable
-
 const CustomDrawerMobilNav = () => {
     const [open, setOpen] = React.useState(false);
     return (
@@ -179,6 +154,7 @@ export const SliderPicture = ({data}) => {
                                 src={slide.image}
                                 alt="Picture of the author"
                                 width={1920}
+                                // height will be 100% of the parent element
                                 height={1080}
                                 className='object-cover w-full h-full absolute top-0 left-0'
                             />
