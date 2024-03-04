@@ -1,6 +1,6 @@
 "use client";
 
-import React from 'react'
+import React, { useEffect } from 'react'
 import Table from '@mui/joy/Table';
 import Box from '@mui/joy/Box';
 import IconButton from '@mui/joy/IconButton';
@@ -142,5 +142,42 @@ export const TeklifAl = ({props, variant, isSuitForMobile}) => {
             TEKLİF AL
         </LoadingButton>
     )
+}
+
+export const SliderPicture = ({data}) => {
+    const [current, setCurrent] = React.useState(0);
+
+    
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setCurrent(current === data.length - 1 ? 0 : current + 1);
+        }, 3000);
+        return () => clearInterval(interval);
+    }, [current]);
+    
+    if (!Array.isArray(data) || data.length <= 0) {
+        return null;
+    }
+
+    return (
+        <section className='relative'>
+            {data.map((slide, index) => {
+                return (
+                    <div
+                        className={index === current ? 'opacity-100' : 'opacity-0'}
+                        key={index}
+                    >
+                        {index === current && (
+                            <img
+                                src={slide.image}
+                                alt='slider'
+                                className='w-full  object-cover'
+                            />
+                        )}
+                    </div>
+                );
+            })}
+        </section>
+    );
 }
         

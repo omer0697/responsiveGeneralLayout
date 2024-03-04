@@ -50,7 +50,7 @@ const HeroSection = () => {
               height={1080}
               // z index is 0
 
-              className='object-cover w-full h-full absolute top-0 left-0 pb-0 lg:pb-40  '
+              className='object-cover w-full h-full absolute top-0 left-0  '
           />
         </div>
       <div className='z-50 w-full flex items-center justify-between p-8'>
