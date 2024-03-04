@@ -17,6 +17,7 @@ import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import Fade from '@mui/material/Fade';
 import LoadingButton from '@mui/lab/LoadingButton';
+import Image from 'next/image'
 
 
 const CustomTable = ({ columns, data }) => {
@@ -164,20 +165,23 @@ export const SliderPicture = ({data}) => {
             {data.map((slide, index) => {
                 return (
                     <div
-                        className={index === current ? 'opacity-100' : 'opacity-0'}
+                        className={index === current ? 'flex' : 'hidden'}
                         key={index}
                     >
                         {index === current && (
-                            <img
+                            <Image
                                 src={slide.image}
-                                alt='slider'
-                                className='w-full  object-cover'
+                                alt={slide.title}
+                                width={1920}
+                                height={1080}
+                                className='object-cover w-full h-full'
                             />
                         )}
                     </div>
-                );
-            })}
+                )
+            }
+            )}
         </section>
-    );
+    )
 }
         
