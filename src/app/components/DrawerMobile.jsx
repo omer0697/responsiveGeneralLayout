@@ -11,6 +11,26 @@ import Typography from '@mui/joy/Typography';
 import ModalClose from '@mui/joy/ModalClose';
 import Menu from '@mui/icons-material/Menu';
 import Search from '@mui/icons-material/Search';
+import Link from 'next/link';
+
+const MENUITEMS = [
+  {
+    text: 'Ana Sayfa',
+    href: '/',
+  },
+  {
+    text: 'Hakkımızda',
+    href: '/about',
+  },
+  {
+    text: 'Referanslarımız',
+    href: '/references',
+  },
+  {
+    text: 'İletişim',
+    href: '/contact',
+  },
+];
 
 export default function DrawerMobileNavigation() {
   const [open, setOpen] = React.useState(false);
@@ -88,10 +108,14 @@ export default function DrawerMobileNavigation() {
             '& > div': { justifyContent: 'center' },
           }}
         >
-          <ListItemButton sx={{ fontWeight: 'lg' }}>Home</ListItemButton>
-          <ListItemButton>About</ListItemButton>
-          <ListItemButton>Studio</ListItemButton>
-          <ListItemButton>Contact</ListItemButton>
+          {MENUITEMS.map((item) => (
+            <ListItemButton key={item.text
+            } >
+              <Link href={item.href} >
+                {item.text}
+              </Link>
+            </ListItemButton>
+          ))}
         </List>
       </Drawer>
     </React.Fragment>
