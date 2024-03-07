@@ -116,7 +116,7 @@ export const TeklifAl = ({props, variant, isSuitForMobile}) => {
             color='success'
             loading={false}
             onClick={() => window.open('https://wa.me/905354231662' , '_blank')}
-            className={`text-white bg-green-500 hover:bg-green-700 ${isSuitForMobile && 'hidden lg:block'}`}
+            className={`text-white z-10 bg-green-500 hover:bg-green-700 ${isSuitForMobile && 'hidden lg:block'}`}
         >
             TEKLİF AL
         </LoadingButton>
@@ -142,20 +142,17 @@ export const SliderPicture = ({data}) => {
     };
 
     return (
-        <section className="relative h-96  w-full lg:h-screen">
+        <section className="relative h-screen  w-full lg:h-screen">
             {data.map((slide, index) => {
                 return (
                     <div
-                        className={index === current ? 'opacity-100' : 'opacity-0'}
+                        className={index === current ? 'opacity-100' +" absolute top-0 left-0 w-full h-full transition-opacity duration-1000" : 'opacity-0' + " absolute top-0 left-0 w-full h-full transition-opacity duration-1000"}
                         key={index}
                     >
                         {index === current && (
                             <img
                                 src={slide.image}
-                                alt="Picture of the author"
-                                width={200}
-                                height={200}
-                                className='object-cover w-full h-full absolute top-0 left-0'
+                                className='object-cover w-full h-full'
                             />
                         )}
                     </div>
