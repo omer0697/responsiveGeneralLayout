@@ -34,13 +34,17 @@ const MENUITEMS = [
 
 export default function DrawerMobileNavigation() {
   const [open, setOpen] = React.useState(false);
+  
+  function clickedLink() {
+    setOpen(false)
+  }
 
   return (
     <React.Fragment>
       <IconButton 
         variant="outlined" 
         onClick={() => setOpen(true)}
-        className='text-white text-sm font-semibold px-4'
+        className='text-white text-sm font-semibold px-4 z-10'
         >
         <Menu />
       </IconButton>
@@ -78,7 +82,10 @@ export default function DrawerMobileNavigation() {
           {MENUITEMS.map((item) => (
             <ListItemButton key={item.text
             } >
-              <Link href={item.href} >
+              <Link 
+                onClick={clickedLink}
+                href={item.href} 
+              >
                 {item.text}
               </Link>
             </ListItemButton>

@@ -30,7 +30,7 @@ const SILIDER_DATA = [
 
 function MainContent() {
   return (
-    <div className='text-black'>
+    <div className='text-black border-4 border-black'>
       <SliderPicture data={SILIDER_DATA} />
     </div>
   )
