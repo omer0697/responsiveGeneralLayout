@@ -142,7 +142,7 @@ export const SliderPicture = ({data}) => {
     };
 
     return (
-        <section className="relative h-screen  w-full lg:h-screen">
+        <section className="relative h-[30rem]  w-full lg:h-screen">
             {data.map((slide, index) => {
                 return (
                     <div
