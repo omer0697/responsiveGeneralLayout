@@ -32,7 +32,7 @@ const HeroSection = () => {
 
 
   return (
-    <div className='h-screen  w-full border-4 border-black  pt-40'>
+    <div className='h-screen  w-full'>
       <div className='w-full flex items-center justify-center p-10 px-20 lg-px-32 z-auto'>
         <div className="text-center flex flex-col items-center lg:flex-row lg:gap-10">
           <h1 className='basis-4/6 text-2xl lg:text-5xl font-bold text-white mb-8 z-50'>

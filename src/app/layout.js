@@ -1,9 +1,11 @@
 
-
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar";
 import { WhatsApp } from "./components/reusableComponents";
+import Footer from "./components/Footer";
+import Loading from "./components/Loading";
+import React from "react";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -59,12 +61,13 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="tr">
-      <body className="bg-gray-100  font-inter">
+      <body className="bg-black ">
         <Navbar />
-        <div className="">
+        <div className="pt-40 z-[99999]">
           {children}
         </div>
         <WhatsApp />
+        <Footer />
       </body>
     </html>
   );
