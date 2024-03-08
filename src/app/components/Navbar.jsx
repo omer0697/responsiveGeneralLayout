@@ -16,14 +16,14 @@ const StyledLink = ({ children, href }) => {
 const Navbar = () => {
   return (
     <div className=' w-full h-full absolute'>
-        <div className='absolute w-full h-full mt-24 bg-black'>
+        <div className='absolute w-full h-full mt-24 bg-black z-[-1]'>
         <Image
               src="/10.svg"
               alt="Picture of the author"
               width={4080 }
               height={4080}
               // z index is 0
-              className='object-cover w-full h-full top-0 left-0 z-[-3]'
+              className='object-cover w-full h-full top-0 left-0 z-[-99999]'
           />
         </div>
         <div className='fixed z-[99] w-full flex items-center justify-between p-8 bg-black '>
