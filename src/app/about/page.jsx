@@ -11,7 +11,7 @@ const Page = () => {
         </p>
         <p>Ankara Jeneratör firması olarak jeneratör satış ve kiralama hizmetleri, bakım ve servis işlemleri, yedek parça ve aksesuarlar konusunda uzman kadromuzla hizmetinizdeyiz.</p>
         <p>Profesyonel kadromuzla sizlere en iyi hizmeti sunmak için buradayız.</p>
-        <p>3 kvA'dan 3000 kvA'ya kadar jeneratörlerimizle sizlere hizmet vermekten mutluluk duyarız.</p>
+        <p>3 KVA'dan 3000 KVA'ya kadar jeneratör satış ve kiralama hizmetleri, bakım ve servis işlemleri, yedek parça ve aksesuarlar konusunda uzman kadromuzla hizmetinizdeyiz.</p>
         </div>
       <Image
         src={'/1.jpg'}
