@@ -1,4 +1,3 @@
-"use client";
 
 import React from 'react'
 import Image from 'next/image'
@@ -15,22 +14,6 @@ import Navbar from './Navbar';
 
 
 const HeroSection = () => {
-
-  // loading bar is shown before the page loads and after the page loads it is hidden
-  const [loading, setLoading] = React.useState(true)
-
-  React.useEffect(() => {
-    setTimeout(() => {
-      setLoading(false)
-    }, 2000)
-  }
-  , [])
-
-  if (loading) {
-    return <Loading />
-  }
-
-
   return (
     <div className='h-screen  w-full'>
       <div className='w-full flex items-center justify-center p-10 px-20 lg-px-32 z-auto'>
