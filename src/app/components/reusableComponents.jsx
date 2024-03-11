@@ -175,6 +175,12 @@ export const SliderPicture = ({data}) => {
 
 export const CallToMe= () => {
     return (
-      <button className='bg-blue-500 text-white px-4 py-2 rounded-md z-0 text-lg'>Ara</button>
+      <button 
+        // willl call to me
+        onClick={() => {
+            // will call +905354231662
+            window.open('tel:+905354231662', '_blank');
+        }}
+       className='bg-blue-500 text-white px-4 py-2 rounded-md z-0 text-lg'>Ara</button>
     )
   }
