@@ -1,16 +1,12 @@
 
 import React from 'react'
 import Image from 'next/image'
-import { CustomDrawerMobilNav, TeklifAl } from './reusableComponents'
+import { CustomDrawerMobilNav, TeklifAl, CallToMe } from './reusableComponents'
 import DrawerMobileNavigation from './DrawerMobile'
 import Link from 'next/link'
 import CustomTable from './CustomTable'
 import Loading from './Loading'
 import Navbar from './Navbar';
-
-
-// before heresection loads we show loading
-
 
 
 const HeroSection = () => {
@@ -23,9 +19,12 @@ const HeroSection = () => {
           </h1>
           <h1 className='basis-2/6 text-blue-200 text-sm lg:text-xl font-semibold z-50 flex flex-col items-center gap-5'>
             Projelerinizde güvenilir enerji kaynağı ve yedek güç ihtiyaçlarınız için Ankara jeneratör satış ve kiralama hizmetleri, bakım ve servis işlemleri, yedek parça ve aksesuarlar konusunda uzman kadromuzla hizmetinizdeyiz.
-            <TeklifAl 
-              variant='outlined'
-            />
+            <div className='flex gap-10'>
+              <TeklifAl 
+                variant='outlined'
+              />
+              <CallToMe />
+            </div>
           </h1>
         </div>
       </div>

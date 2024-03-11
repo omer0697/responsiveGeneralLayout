@@ -118,7 +118,7 @@ export const TeklifAl = ({props, variant, isSuitForMobile}) => {
             onClick={() => window.open('https://wa.me/905354231662' , '_blank')}
             className={`text-white z-10 bg-green-500 hover:bg-green-700 ${isSuitForMobile && 'hidden lg:block'}`}
         >
-            TEKLİF AL
+            Teklif Al
         </LoadingButton>
     )
 }
@@ -172,3 +172,9 @@ export const SliderPicture = ({data}) => {
         </section>
     );
 }
+
+export const CallToMe= () => {
+    return (
+      <button className='bg-blue-500 text-white px-4 py-2 rounded-md'>İLTETİŞİME GEÇ</button>
+    )
+  }
