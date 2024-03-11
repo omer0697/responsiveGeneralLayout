@@ -116,9 +116,9 @@ export const TeklifAl = ({props, variant, isSuitForMobile}) => {
             color='success'
             loading={false}
             onClick={() => window.open('https://wa.me/905354231662' , '_blank')}
-            className={`text-white z-10 bg-green-500 hover:bg-green-700 ${isSuitForMobile && 'hidden lg:block'}`}
+            className={`text-white text-lg z-10 bg-green-500 hover:bg-green-700 ${isSuitForMobile && 'hidden lg:block'}`}
         >
-            Teklif Al
+            WhatsApp
         </LoadingButton>
     )
 }
@@ -175,6 +175,6 @@ export const SliderPicture = ({data}) => {
 
 export const CallToMe= () => {
     return (
-      <button className='bg-blue-500 text-white px-4 py-2 rounded-md'>İLTETİŞİME GEÇ</button>
+      <button className='bg-blue-500 text-white px-4 py-2 rounded-md z-0 text-lg'>Ara</button>
     )
   }
