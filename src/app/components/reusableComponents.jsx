@@ -179,7 +179,7 @@ export const CallToMe= () => {
         // willl call to me
         onClick={() => {
             // will call +905354231662
-            window.open('tel:+905354231662', '_blank');
+            window.open('tel:+905354231662');
         }}
        className='bg-blue-500 text-white px-4 py-2 rounded-md z-0 text-lg'>Ara</button>
     )
