@@ -11,7 +11,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Ankara Jeneratör",
-  description: "Ankara Jeneratör Satış ve Kiralama Hizmetleri, Bakım ve Servis İşlemleri, Yedek Parça ve Aksesuarlar",
+  description: "Ankara Jeneratör Satış ve Kiralama Hizmetleri, Bakım ve Servis İşlemleri, Yedek Parça ve Aksesuarlar, 3 KVA'dan 3000 KVA'ya kadar jeneratör satış ve kiralama hizmetleri, bakım ve servis işlemleri, yedek parça ve aksesuarlar konusunda uzman kadromuzla hizmetinizdeyiz. Elektrik kesintilerine karşı güvenilir enerji kaynağı ve yedek güç ihtiyaçlarınız için Ankara Jeneratör.",
   image: "logo.svg",
   type: "website",
   siteName: "Ankara Jeneratör",
