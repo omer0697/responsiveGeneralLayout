@@ -3,6 +3,7 @@ import Image from 'next/image'
 import { TeklifAl } from './reusableComponents'
 import DrawerMobileNavigation from './DrawerMobile'
 import Link from 'next/link'
+import Logo from './Logo'
 
 const StyledLink = ({ children, href }) => {
     return (
@@ -27,13 +28,7 @@ const Navbar = () => {
           />
         </div>
         <div className='fixed z-[99] w-full flex items-center justify-between p-8 bg-black '>
-            <Image
-                src="/logo.svg"
-                alt="Picture of the author"
-                width={160}
-                height={160}
-                className='object-cover top-10 left-10 z-10 p-3 lg:p-0'
-            />
+            <Logo />
             <div className='z-20 gap-10 hidden lg:flex'>
                 <StyledLink href='/about'>Hakkımızda</StyledLink>
                 <StyledLink href='/references'>Referanslarımız</StyledLink>
