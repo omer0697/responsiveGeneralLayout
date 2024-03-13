@@ -7,7 +7,6 @@ import Link from 'next/link'
 import CustomTable from './CustomTable'
 import Loading from './Loading'
 import Navbar from './Navbar';
-import ImagesList from './ImagesList'
 
 
 const HeroSection = () => {
@@ -29,7 +28,6 @@ const HeroSection = () => {
           </h1>
         </div>
       </div>
-        <ImagesList />
 
     </div>
   )

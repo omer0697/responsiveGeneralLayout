@@ -5,6 +5,7 @@ import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext } from 'pure-react-carousel'
 import 'pure-react-carousel/dist/react-carousel.es.css';
+import Loading from './Loading';
 
 const itemData = [
     {
@@ -98,10 +99,14 @@ const itemData = [
 
 export default function ImagesList() {
     const [windowWidth, setWindowWidth] = useState(0)
+    const [loading, setLoading] = useState(true)
 
     useEffect(() => {
         setWindowWidth(window.innerWidth)
+        setLoading(false)
     })
+
+    if (loading) return <Loading />
 
     return (
         <>
@@ -111,7 +116,7 @@ export default function ImagesList() {
             naturalSlideHeight={100}
             totalSlides={itemData.length}
             visibleSlides={windowWidth > 1024 ? 4 : 2}
-            className='w-full h-44 lg:h-60 xl:h-80 2xl:h-96 relative overflow-hidden mt-10  bg-white rounded-lg'
+            className='w-full px-16 h-44 lg:h-60 xl:h-80 2xl:h-96 relative overflow-hidden mt-10  bg-white rounded-lg'
         >
             <Slider>
                 {itemData.map((item, index) => (
